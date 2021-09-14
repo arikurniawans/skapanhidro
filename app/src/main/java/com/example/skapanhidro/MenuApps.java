@@ -33,7 +33,7 @@ CardView cardPompa,cardSensor, cardestimasi;
             }
         });
 
-        cardSensor.setOnClickListener(new View.OnClickListener() {
+        cardestimasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent estimasi = new Intent(MenuApps.this, EstimasiActivity.class);

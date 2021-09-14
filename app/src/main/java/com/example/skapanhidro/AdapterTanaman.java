@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class AdapterTanaman extends RecyclerView.Adapter<AdapterTanaman.MyViewHo
         public CardView cv_main;
         public RelativeLayout relaList;
         public ImageView imgTanaman;
-
+        public Button btnDetail;
 
         public MyViewHolder(View view) {
             super(view);
@@ -38,6 +39,7 @@ public class AdapterTanaman extends RecyclerView.Adapter<AdapterTanaman.MyViewHo
             txtNamaTanaman = view.findViewById(R.id.txtTanaman);
             txtJumlah = view.findViewById(R.id.txtJumlah);
             imgTanaman = view.findViewById(R.id.fotoTanaman);
+            btnDetail = view.findViewById(R.id.btnDetail);
         }
     }
 
@@ -73,7 +75,7 @@ public class AdapterTanaman extends RecyclerView.Adapter<AdapterTanaman.MyViewHo
                     .override(100, 100)
                     .into(holder.imgTanaman); // resizing
 
-            holder.cv_main.setOnClickListener(new View.OnClickListener() {
+            holder.btnDetail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(mContext.getApplicationContext(), HstActivity.class);
