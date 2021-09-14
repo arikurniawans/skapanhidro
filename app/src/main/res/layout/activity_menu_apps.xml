@@ -178,7 +178,7 @@
                 <androidx.cardview.widget.CardView
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
-                    android:id="@+id/bankcardId4"
+                    android:id="@+id/cardestimasi"
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
