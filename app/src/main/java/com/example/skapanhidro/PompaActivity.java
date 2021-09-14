@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -21,7 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PompaActivity extends AppCompatActivity {
-Button btnON, btnOFF;
+    Button btnON, btnOFF;
+    TextView txtstatus;
     String success;
     private static final String TAG = PompaActivity.class.getSimpleName();
 
@@ -34,22 +36,33 @@ Button btnON, btnOFF;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pompa);
-        btnON = (Button) findViewById(R.id.btnOn);
-        btnOFF = (Button) findViewById(R.id.btnOff);
+        btnON = (Button) findViewById(R.id.btnControl);
+        txtstatus = (TextView) findViewById(R.id.txtstatus);
+        //btnOFF = (Button) findViewById(R.id.btnOn);
 
         btnON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hidupkanPompa("1");
+
+                if(btnON.getText().equals("on")){
+                    btnON.setText("off");
+                    hidupkanPompa("0");
+                    txtstatus.setText("OFF");
+
+                }else if(btnON.getText().equals("off")){
+                    btnON.setText("on");
+                    hidupkanPompa("1");
+                    txtstatus.setText("ON");
+                }
             }
         });
 
-        btnOFF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hidupkanPompa("0");
-            }
-        });
+//        btnOFF.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                hidupkanPompa("0");
+//            }
+//        });
 
     }
 

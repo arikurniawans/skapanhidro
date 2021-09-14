@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">skapanhidro</string>
+    <string name="body">Aplikasi Smart Hidrponik SMKN 8 Bandar Lampung</string>
+    <string name="content">Penjelasan Sistem hidroponik adalah salah satu metode dalam budidaya menanam dengan manfaatkan air tanpa menggunakan media tanah dengan menekankan hara nutrisi bagi tanaman</string>
+
+    <string name="n_title">NAMA KELOMPOK</string>
+    <string name="nk_1">1. AHMAD SALEH  KURNIAWAN (server)</string>
+    <string name="nk_2">2.AMELIA APRIYANI (IOT)</string>
+    <string name="nk_3">3.MUHAMMAD RISKI (IOT)</string>
+    <string name="nk_4">4.RAKHASY AULIA SALSABILLA (BACKEND)</string>
+    <string name="nk_5">5.DICKY DWI SYAPUTRA (FRONTEND)</string>
+    <string name="nk_6">6.FIRMANSYAH (FRONTEND)</string>
 </resources>

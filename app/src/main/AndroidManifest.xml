@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Skapanhidro"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SensorActivity"></activity>
+        <activity android:name=".HstActivity"></activity>
+        <activity android:name=".EstimasiActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".SensorActivity" />
         <activity android:name=".PompaActivity" />
         <activity android:name=".MenuApps" />
         <activity android:name=".MainActivity">

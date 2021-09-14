@@ -45,26 +45,26 @@
 
     </RelativeLayout>
 
-<!--    <Button-->
-<!--        android:id="@+id/btnOn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="50dp"-->
-<!--        android:layout_marginTop="300dp"-->
-<!--        android:text="on"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:backgroundTint="@color/Intro2"/>-->
+    <!--    <Button-->
+    <!--        android:id="@+id/btnOn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="50dp"-->
+    <!--        android:layout_marginTop="300dp"-->
+    <!--        android:text="on"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:backgroundTint="@color/Intro2"/>-->
 
-<!--    <Button-->
-<!--        android:id="@+id/btnOff"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="250dp"-->
-<!--        android:layout_marginTop="300dp"-->
-<!--        android:text="off"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:backgroundTint="@color/Intro2"/>-->
-<!--    />-->
+    <!--    <Button-->
+    <!--        android:id="@+id/btnOff"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="250dp"-->
+    <!--        android:layout_marginTop="300dp"-->
+    <!--        android:text="off"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:backgroundTint="@color/Intro2"/>-->
+    <!--    />-->
 
 
     <Button
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15pt"
-        android:text="on"
+        android:text="off"
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/roundbtn"/>
@@ -99,6 +99,6 @@
         android:textStyle="bold"
         android:textSize="10pt"
         android:textColor="@color/green_A400"
-        android:text="ON"/>
+        android:text="OFF"/>
 
 </RelativeLayout>
