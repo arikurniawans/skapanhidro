@@ -50,7 +50,7 @@ public class EstimasiActivity extends AppCompatActivity {
 
         getData();
 
-        super.onCreate(savedInstanceState);
+        //  super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hst);
 
         date_pick = (LinearLayout) findViewById(R.id.date_picker);
@@ -62,16 +62,6 @@ public class EstimasiActivity extends AppCompatActivity {
                 startActivity(datePicker);
             }
         });
-
-//        date_pick = (LinearLayout) findViewById(R.id.date_picker);
-//
-//        date_pick.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent datePicker = new Intent(EstimasiActivity.this, HstActivity.class);
-//                startActivity(datePicker);
-//            }
-//        });
 
     }
 
