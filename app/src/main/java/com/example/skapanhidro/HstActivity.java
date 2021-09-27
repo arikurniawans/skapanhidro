@@ -38,7 +38,7 @@ public class HstActivity extends AppCompatActivity {
     EditText etTglHst;
     Button btnLihat;
     ProgressDialog pDialog;
-    int success;
+    String success;
     private static final String TAG = HstActivity.class.getSimpleName();
 
     private static final String TAG_SUCCESS = "success";
@@ -59,6 +59,13 @@ public class HstActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 TampilTanggalAwal();
+            }
+        });
+
+        btnLihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                simpanTanggal(idtanam, etTglHst.getText().toString());
             }
         });
     }
@@ -84,6 +91,81 @@ public class HstActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void simpanTanggal(final String Id, final String Tanggal) {
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+        pDialog.setMessage("Loading Server ...");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST, RestApi.Pompa, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.e(TAG, "Register Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    success = jObj.getString(TAG_SUCCESS);
+
+                    // Check for error node in json
+                    if (success.equals("true")) {
+
+                        Log.e("Successfully !", jObj.toString());
+
+                        Toast.makeText(getApplicationContext(),
+                                jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
+
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
+
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Server Request Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+
+                hideDialog();
+
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id_plant", Id);
+                params.put("tgl_hst", Tanggal);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 
 }
