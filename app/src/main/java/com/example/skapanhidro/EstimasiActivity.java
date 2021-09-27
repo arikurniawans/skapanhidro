@@ -1,12 +1,16 @@
 package com.example.skapanhidro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -29,6 +33,8 @@ public class EstimasiActivity extends AppCompatActivity {
     AdapterTanaman adapterTanaman;
     List<ClassTanaman> listTanaman;
 
+    LinearLayout date_pick;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +49,46 @@ public class EstimasiActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapterTanaman);
 
         getData();
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_hst);
+
+        date_pick = (LinearLayout) findViewById(R.id.date_picker);
+
+        date_pick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent datePicker = new Intent(EstimasiActivity.this, HstActivity.class);
+                startActivity(datePicker);
+            }
+        });
+
+//        date_pick = (LinearLayout) findViewById(R.id.date_picker);
+//
+//        date_pick.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent datePicker = new Intent(EstimasiActivity.this, HstActivity.class);
+//                startActivity(datePicker);
+//            }
+//        });
+
     }
+
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_menu_apps);
+//
+//        date_pick = (LinearLayout) findViewById(R.id.date_picker);
+//
+//        date_pick.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent datePicker = new Intent(EstimasiActivity.this, HstActivity.class);
+//                startActivity(datePicker);
+//            }
+//        });
+//    }
 
     private void getData() {
 
